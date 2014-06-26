@@ -1,0 +1,284 @@
+<script>
+
+
+
+auto();    //for automatically changing the Images
+
+
+
+
+currentIndx=-1;
+MyImages=new Array();						//List of images
+
+MyImages[0]='images/iiitm1.jpg';
+
+MyImages[1]='images/iiitm2.jpg';
+
+MyImages[2]='images/iiitm3.jpg';
+
+MyImages[3]='images/iiitm4.jpg';
+MyImages[4]='images/iiitm.jpg';
+
+
+Messages=new Array()							//list of text to show with images
+
+Messages[0]='We provide you with the best experience with your devices.';
+
+Messages[1]='All brands are available under one roof.';
+
+Messages[2]='Softwares to configure your device according to your needs.'
+
+Messages[3]='Full repairing and services.';
+
+Messages[4]='We are &nbsp;&nbsp;&nbsp;<FONT SIZE="7">GAdGetFlow<FONT>';
+
+
+imagesPreloaded = new Array(4)
+
+for (var i = 0; i < MyImages.length ; i++)
+
+{
+
+imagesPreloaded[i] = new Image(120,120)
+
+imagesPreloaded[i].src=MyImages[i]
+
+}
+
+
+
+
+
+
+function Nexter(){
+if (currentIndx<imagesPreloaded.length-1){
+currentIndx=currentIndx+1;
+document.theImage.src=imagesPreloaded[currentIndx].src
+document.form1.text1.value=Messages[currentIndx];
+document.getElementById("slide").innerHTML=Messages[currentIndx];
+}
+else {
+ currentIndx=0
+document.theImage.src=imagesPreloaded[currentIndx].src
+document.form1.text1.value=Messages[currentIndx];
+document.getElementById("slide").innerHTML=Messages[currentIndx];
+}
+writeImageNumber();
+automaticly();
+}
+function Backer(){
+if (currentIndx>0){
+currentIndx=currentIndx-1;
+document.theImage.src=imagesPreloaded[currentIndx].src
+document.form1.text1.value=Messages[currentIndx];
+document.getElementById("slide").innerHTML=Messages[currentIndx];
+}
+else {
+ currentIndx=3
+document.theImage.src=imagesPreloaded[currentIndx].src
+document.form1.text1.value=Messages[currentIndx];
+document.getElementById("slide").innerHTML=Messages[currentIndx];
+}
+writeImageNumber();
+automaticly();
+}
+
+
+
+
+function automaticly() {
+     {
+if (currentIndx<imagesPreloaded.length){
+currentIndx=currentIndx;
+}
+else {
+ currentIndx=0;
+}
+writeImageNumber();
+document.theImage.src=imagesPreloaded[currentIndx].src;
+document.form1.text1.value=Messages[currentIndx];
+document.getElementById("slide").innerHTML=Messages[currentIndx];
+currentIndx=currentIndx+1;
+var delay = setTimeout("automaticly()",3500);
+    }
+}
+
+function setCurrentIndex()
+{
+currentIndx=0;
+document.theImage.src=MyImages[0];
+document.form1.text1.value=Messages[0];
+document.getElementById("slide").innerHTML=Messages[currentIndx];
+writeImageNumber();
+}
+
+
+
+function moveslide1()
+{
+setTimeout(function(){document.getElementById("slide").style.visibility='hidden'},0);
+setTimeout(function(){document.getElementById("slide").style.visibility='visible'},250);
+setTimeout(function(){document.getElementById("slide").style.left=-600},250);
+setTimeout(function(){document.getElementById("slide").style.left=-500},280);
+setTimeout(function(){document.getElementById("slide").style.left=-400},300);
+setTimeout(function(){document.getElementById("slide").style.left=-300},340);
+setTimeout(function(){document.getElementById("slide").style.left=-200},360);
+setTimeout(function(){document.getElementById("slide").style.left=-100},380);
+setTimeout(function(){document.getElementById("slide").style.left=10},420);
+setTimeout(function(){document.getElementById("slide").style.left=30},450);
+setTimeout(function(){document.getElementById("slider").style.left=200},10);
+setTimeout(function(){document.getElementById("slider").style.left=180},20);
+setTimeout(function(){document.getElementById("slider").style.left=160},40);
+setTimeout(function(){document.getElementById("slider").style.left=140},60);
+setTimeout(function(){document.getElementById("slider").style.left=120},80);
+setTimeout(function(){document.getElementById("slider").style.left=130},100);
+setTimeout(function(){document.getElementById("slider").style.left=110},120);
+setTimeout(function(){document.getElementById("slider").style.left=130},150);
+setTimeout(function(){document.getElementById("slider").style.left=120},160);
+setTimeout(function(){document.getElementById("slider").style.left=140},170);
+setTimeout(function(){document.getElementById("slider").style.left=110},180);
+setTimeout(function(){document.getElementById("slider").style.left=130},200);
+setTimeout(function(){document.getElementById("slider").style.left=120},220);
+setTimeout(function(){document.getElementById("slider").style.left=140},240);
+setTimeout(function(){document.getElementById("slider").style.left=110},250);
+setTimeout(function(){document.getElementById("slider").style.left='10%'},270);
+Nexter();
+
+}
+function moveslide2()
+{setTimeout(function(){document.getElementById("slide").style.visibility='hidden'},0);
+setTimeout(function(){document.getElementById("slide").style.visibility='visible'},250);
+setTimeout(function(){document.getElementById("slide").style.left=-600},250);
+setTimeout(function(){document.getElementById("slide").style.left=-500},280);
+setTimeout(function(){document.getElementById("slide").style.left=-400},300);
+setTimeout(function(){document.getElementById("slide").style.left=-300},340);
+setTimeout(function(){document.getElementById("slide").style.left=-200},360);
+setTimeout(function(){document.getElementById("slide").style.left=-100},380);
+setTimeout(function(){document.getElementById("slide").style.left=10},420);
+setTimeout(function(){document.getElementById("slide").style.left=30},450);
+setTimeout(function(){document.getElementById("slider").style.left=200},10);
+setTimeout(function(){document.getElementById("slider").style.left=180},20);
+setTimeout(function(){document.getElementById("slider").style.left=160},40);
+setTimeout(function(){document.getElementById("slider").style.left=140},60);
+setTimeout(function(){document.getElementById("slider").style.left=130},80);
+setTimeout(function(){document.getElementById("slider").style.left=130},100);
+setTimeout(function(){document.getElementById("slider").style.left=130},120);
+setTimeout(function(){document.getElementById("slider").style.left='10%'},150);
+Backer();
+}
+
+
+function auto()
+{setTimeout("moveslide1()",2500);
+setTimeout("auto()",4000);
+}
+
+
+</script>
+
+
+
+<form name="form1"><textarea rows="4" name="text1" cols="20" wrap="virtual" style="visibility:hidden;" style="border: 0px;">We learn about our world through our 5 senses.</textarea></form>
+
+
+<!--slider division-->
+<div id="slider" name="slider">
+
+
+
+
+
+
+
+
+<img SRC="images/iiitm.jpg" NAME="theImage" HEIGHT="100%" WIDTH="100%"></img>
+
+
+
+
+
+
+
+
+<a href="#" onclick="moveslide1()"  name="next"  value="Next &gt;&gt;" ><div id="next"  ><img src='next.png'></img></div></a>
+<a href="#" onclick="moveslide2()" name="previous" value="&lt;&lt; Previous"><div id="prev" ><img src='back.png'></img></div></a>
+<span id="sp1"></span>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="slide"  style="visibility:visible;">We provide you with the power to experiment with your system.</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+<!--   css for slider -->
+<style>
+#slider{
+position:absolute;
+top:20%;
+left:10%;
+color:3D623D;
+font-size:12px;
+width:80%;
+height:60%;
+border-radius:5px;
+border:0px solid black;
+box-shadow: 0px 10px 30px 0px black, 0px 0px 15px rgb(232, 232, 232) inset;
+}
+
+
+#slide{
+position:absolute;
+top:15%;
+left:2%;
+color:white;
+background:black;
+font-size:18px;width:70%;
+opacity:0.6;
+}
+#slide:hover
+{opacity:1;
+}
+
+#next{
+position:absolute;
+top:60%;
+right:3%;
+color:dfdgfg;
+background:transparent;
+opacity:0.7;
+}
+#next:hover
+{opacity:1;
+}
+#prev{
+position:absolute;
+top:60%;
+left:3%;
+background:transparent;
+opacity:0.7;
+}
+#prev:hover
+{opacity:1;
+}
+
+
+
+</style>
+
