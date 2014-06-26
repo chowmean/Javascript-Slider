@@ -1,0 +1,2 @@
+<center><font size="64"><h><u>JavaScript Slider</u></h></font><br><br><br><font size="4" color="red">Just include Slider.html and see the magic</font></center>
+<iframe src="slider.html" style="height:100%;width:100%;border:0px;"></iframe>
