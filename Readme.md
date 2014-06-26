@@ -1,2 +1,4 @@
-<center><font size="64"><h><u>JavaScript Slider</u></h></font><br><br><br><font size="4" color="red">Just include Slider.html and see the magic</font></center>
-<iframe src="slider.html" style="height:100%;width:100%;border:0px;"></iframe>
+#Javascript Slider<br>
+1. Just add 'slider.html'
+2. Add images in '/images and slider.html'
+3. And change the css and text in slider.html and you are done.
